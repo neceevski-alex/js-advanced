@@ -12,18 +12,18 @@
         <div class="logo">E-shop</div>
         <div class="cart">
             <form action="#" class="search-form">
-                <input type="text" class="search-field" >
-                <button class="btn-search" type="submit">
+                <input type="text" v-model.lazy="userSearch" class="search-field" >
+                <button class="btn-search" @click="filter(userSearch)" type="submit" >
                     <i class="fas fa-search"></i>
                 </button>
             </form>
-            <button class="btn-cart" type="button">Корзина</button>
-            <div class="cart-block invisible"></div>
+            <button @click='show=!show' class="btn-cart" type="button">Корзина</button>
+            <div v-if="show" class="cart-block"><h2 id="emptyCart">Корзина пуста</h2></div>
         </div>
     </header>
     <main>
         <div class="products">
-            <div class="product-item" v-for="product of products" :key="product.id_product">
+            <div class="product-item" :data-id="product.id_product" v-for="product of products" :key="product.id_product">
                 <img :src="imgCatalog" alt="Some img">
                 <div class="desc">
                     <h3>{{product.product_name}}</h3>

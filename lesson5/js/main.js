@@ -1,13 +1,18 @@
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
-
+//const Cart = document.querySelector('.cart-block');
+//const Products = document.querySelector('.products');
 const app = new Vue({
     el: '#app',
     data: {
         catalogUrl: '/catalogData.json',
         products: [],
-        imgCatalog: 'https://placehold.it/200x150',
+        /* filtered: [], */
+        imgCatalog: 'img/200x150.png',
         userSearch: '',
-        show: false
+        show: false,
+        cart: [],
+        Cartblock: document.querySelector('.cart-block'),
+        emptyCart: '<h2 id="emptyCart">Корзина пуста<h2>'
     },
     methods: {
         getJson(url){
@@ -19,6 +24,28 @@ const app = new Vue({
         },
         addProduct(product){
             console.log(product.id_product);
+        },
+        filter(value){
+            const regexp = new RegExp(value, 'i');
+            let filtered = this.products.filter(product => regexp.test(product.product_name));
+            console.log(filtered);
+            const prods = document.querySelectorAll('.product-item');
+            if (filtered.length>0) {
+                prods.forEach(prod=>prod.classList.add('invisible'));
+                filtered.forEach(el => {
+                    const block = document.querySelector(`.products>[data-id="${el.id_product}"]`);
+                    // if(!filtered.includes(el)){
+                        block.classList.remove('invisible');
+                    // } else {
+                    //     block.classList.remove('invisible');
+                    // }
+                
+                })
+            }
+                else {
+                    prods.forEach(prod=>prod.classList.remove('invisible'));
+                    alert ("НЕ задано условие поиска")//Не работает!!! ПОчему???
+                }
         }
     },
     mounted(){
@@ -28,12 +55,13 @@ const app = new Vue({
                    this.products.push(el);
                }
            });
-        this.getJson(`getProducts.json`)
+           document.querySelector('.cart-block').innerHTML=this.emptyCart;//Не работает!!! ПОчему???       
+        /* this.getJson(`getProducts.json`)
             .then(data => {
                 for(let el of data){
                     this.products.push(el);
                 }
-            })
+            }) */
     }
 })
 
@@ -70,18 +98,7 @@ const app = new Vue({
 //             block.insertAdjacentHTML('beforeend', productObj.render());
 //         }
 //     }
-//     filter(value){
-//         const regexp = new RegExp(value, 'i');
-//         this.filtered = this.allProducts.filter(product => regexp.test(product.product_name));
-//         this.allProducts.forEach(el => {
-//             const block = document.querySelector(`.product-item[data-id="${el.id_product}"]`);
-//             if(!this.filtered.includes(el)){
-//                 block.classList.add('invisible');
-//             } else {
-//                 block.classList.remove('invisible');
-//             }
-//         })
-//     }
+
 //     _init(){
 //         return false
 //     }
