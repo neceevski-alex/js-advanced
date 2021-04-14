@@ -11,12 +11,13 @@
     <header>
         <div class="logo">E-shop</div>
         <div class="cart">
-            <form action="#" class="search-form" @submit.prevent="filter">
+            <!--<form action="#" class="search-form" @submit.prevent="filter">
                 <input type="text" class="search-field" v-model="userSearch">
                 <button type="submit" class="btn-search">
                     <i class="fas fa-search"></i>
                 </button>
-            </form>
+            </form>-->
+            <find></find>
             <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
 
             <cart :cart-items="cartItems"
@@ -35,11 +36,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="js/ProductComponent.js"></script>
 <script src="js/CartComponent.js"></script>
+<script src="js/FindComponent.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
-Как-то очень сложно выходит в  Vue события к компонентам вешать: В index.html  - <products :products="filtered" :img="imgProduct" 
-@add-product="addProduct"></products>, потом в  Productcomp.js - <button class="buy-btn" @click="$parent.$emit('add-product', product)">Купить</button>
-ПОчему нельзя сразу примрено так: <button class="buy-btn" @click="addProduct(product)">Купить</button>? 
-К чему эта прокладка @add-product="addProduct" и @click="$parent.$emit('add-product', product)?
-gerasimenkosv@bk.ru
