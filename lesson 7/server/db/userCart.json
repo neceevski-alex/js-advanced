@@ -1,0 +1,48 @@
+{
+    "amount": 0,
+    "countGoods": 0,
+    "contents": [
+        {
+            "quantity": 3,
+            "product_image": "<img src='img/gal456.png' alt='Some img'>",
+            "id_product": 456,
+            "product_name": "Fashion 4",
+            "price": 1000
+        },
+        {
+            "quantity": 4,
+            "product_image": "<img src='img/gal124.png' alt='Some img'>",
+            "id_product": 124,
+            "product_name": "Fashion 1",
+            "price": 1600
+        },
+        {
+            "quantity": 1,
+            "product_image": "<img src='img/gal457.png' alt='Some img'>",
+            "id_product": 457,
+            "product_name": "Fashion 2",
+            "price": 3000
+        },
+        {
+            "quantity": 2,
+            "product_image": "<img src='img/gal123.png' alt='Some img'>",
+            "id_product": 123,
+            "product_name": "Fashion 3",
+            "price": 45600
+        },
+        {
+            "quantity": 1,
+            "product_image": "<img src='img/gal456.png' alt='Some img'>",
+            "id_product": 456,
+            "product_name": "Fashion 4",
+            "price": 1000
+        },
+        {
+            "quantity": 1,
+            "product_image": "<img src='img/gal124.png' alt='Some img'>",
+            "id_product": 124,
+            "product_name": "Fashion 1",
+            "price": 1600
+        }
+    ]
+}
