@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <header-comp :cartitems="cartGoods" @filtergoods='filterGoods' @addproduct='addProduct'></header-comp>
+        </header>
+        <main>
+            <products-comp :showed='showedProducts' @addproduct='addProduct' @remove='remove'></products-comp>
+        </main>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
