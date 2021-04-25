@@ -1,5 +1,27 @@
 {
     "amount": 0,
     "countGoods": 0,
-    "contents": []
+    "contents": [
+        {
+            "quantity": 6,
+            "id_product": 124,
+            "product_name": "Fashion 1",
+            "price": 1600,
+            "img": "./img/gal2_1.png"
+        },
+        {
+            "quantity": 3,
+            "id_product": 457,
+            "product_name": "Fashion 2",
+            "price": 3000,
+            "img": "./img/gal2_2.png"
+        },
+        {
+            "quantity": 8,
+            "id_product": 123,
+            "product_name": "Fashion 3",
+            "price": 45600,
+            "img": "./img/gal2_3.png"
+        }
+    ]
 }
